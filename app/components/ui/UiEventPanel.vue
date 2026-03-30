@@ -4,12 +4,6 @@
       <slot />
     </div>
   </div>
-<div adsfasdf asdf>
-  asdfasdf
-</div>
-                 
-   
-   
 </template>
 
 <style scoped lang="scss">
