@@ -1,6 +1,16 @@
-# Nuxt Minimal Starter
+# To-dos App
+![main-image](main-image.png)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Для запуска в докере (прод)
+
+```bash
+docker-compose up --build
+```
+
+> [!TIP]
+> Приложение запустится на http://localhost:3080/
+
+# Для запуска вне докера
 
 ## Setup
 
@@ -71,5 +81,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
