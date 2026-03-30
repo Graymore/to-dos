@@ -1,0 +1,19 @@
+@mixin z-null {
+  z-index: unset;
+}
+
+@mixin z-back {
+  z-index: 1;
+}
+
+@mixin z-middle {
+  z-index: 2;
+}
+
+@mixin z-front {
+  z-index: 3;
+}
+
+@mixin z-global {
+  z-index: 4;
+}

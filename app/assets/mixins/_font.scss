@@ -1,0 +1,35 @@
+@use 'assets/mixins/device';
+
+@mixin inherit {
+  font-size: 16px;
+  
+  @include device.phone {
+    font-size: 14px;
+  }
+}
+
+@mixin inherit-500 {
+  @include inherit;
+  font-weight: 500;
+}
+
+@mixin middle {
+  font-size: 18px;
+}
+
+@mixin high {
+  font-size: 24px;
+  
+  @include device.phone {
+    font-size: 18px;
+  }
+}
+
+@mixin title {
+  font-size: 28px;
+  font-weight: 400;
+
+  @include device.phone {
+    font-size: 22px;
+  }
+}

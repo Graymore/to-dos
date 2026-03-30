@@ -1,0 +1,27 @@
+@use 'assets/mixins/flex';
+@use 'assets/mixins/font';
+@use 'assets/mixins/device';
+@use 'assets/vars/global';
+
+@mixin content-center {
+  .page {
+    @include flex.column;
+    width: 100%;
+
+    &__content {
+      @include flex.column;
+      max-width: global.$app_max_content_width;
+      margin: 0 auto;
+      padding: 30px 0;
+      width: 100%;
+
+      @include device.tablet {
+        padding: 30px 20px;
+      }
+    }
+
+    &__content h1 {
+      @include font.title;
+    }
+  }
+}
