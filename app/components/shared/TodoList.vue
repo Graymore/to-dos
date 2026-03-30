@@ -18,6 +18,19 @@ const emptyTextVisible = computed(() => inactive && !todos.length);
 
 const todoValue = computed(() => (i:number) => `todo-${i}`);
 
+const todosSlicedCount = computed(() => todos.length - 3);
+const todosSlicedVisible = computed(() => todosSlicedCount.value > 0 && inactive);
+
+const todosData = computed(() => {
+  if (inactive) {
+    const limited = todos.slice(0, 3);
+
+    return limited;
+  }
+
+  return todos;
+})
+
 const todoListClasses = computed(() => ({
   'todo-list': true,
   'todo-list--inactive': inactive
@@ -38,7 +51,7 @@ const showTodoEditModal = (index: number) => {
     />
     
     <div
-      v-for="(todo, index) in todos"
+      v-for="(todo, index) in todosData"
       :key="index"
       class="todo-list__item"
     >
@@ -65,6 +78,13 @@ const showTodoEditModal = (index: number) => {
         />
       </span>
     </div>
+
+    <span 
+      v-if="todosSlicedVisible"
+      class="todo-list__count"
+    >
+      + {{ todosSlicedCount }}
+    </span>
 
     <span
       v-if="!inactive"
@@ -104,6 +124,11 @@ const showTodoEditModal = (index: number) => {
 
   &__item {
     @include flex.inline-between;
+  }
+
+  &__count {
+    @include font.inherit-500;
+    margin-top: 5px;
   }
 
   &__actions {
