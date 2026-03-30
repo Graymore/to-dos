@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nuxt-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nuxt-4-app
+    restart: unless-stopped
+    ports:
+      - "3080:3080"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3080
+    networks:
+      - nuxt-network
+
+networks:
+  nuxt-network:
+    driver: bridge
